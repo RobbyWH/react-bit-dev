@@ -1,24 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { Accordion } from "@robbywh/cross-platform.base-ui.react.accordion";
+import {Item} from '@robbywh/cross-platform.api.accordion';
 
 function App() {
+  const colorsList = [
+    ['Red', '01'],
+    ['Blue', '02'],
+    ['Green', '03'],
+  ].map(color => new Item(color[0], color[1]).toObject());
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Accordion elementList={colorsList} />
   );
 }
 
